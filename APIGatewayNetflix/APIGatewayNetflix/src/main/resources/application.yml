@@ -1,0 +1,28 @@
+spring:
+  cloud:
+   gateway:
+     routes:
+       - id: Drugs
+         uri: http://localhost:5001
+         predicates:
+           - Path=/drugs/**
+       - id: User-Sevice
+         uri: http://localhost:5002
+         predicates:
+           - Path=/user/**
+       - id: supplier
+         uri: http://localhost:5003
+         predicates:
+           - Path=/supplier/**
+       - id: Order-Service
+         uri: http://localhost:5004
+         predicates:
+           - Path=/order/**
+       - id: cart
+         uri: http://localhost:5005
+         predicates:
+           - Path=/drugs/cart/**                    
+       - id: Payment-Service
+         uri: http://localhost:5009
+         predicates:
+           - Path=/payment/**                 
